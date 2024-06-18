@@ -4,15 +4,43 @@
   box-sizing: border-box;
 }
 
-.abc {
-  color: red;
+.content {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
 
-  p {
-    text-transform: uppercase;
+}
+
+.nav-bar {
+  width: 20%;
+  padding: 2em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .search {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0 5px;
+    input{
+      outline: none;
+      border: none;
+    }
+  }
+
+  li {
+    padding: 10px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 
-p {
-  color: blue;
-  text-transform: uppercase;
+.main-content {
+  width: 80%;
 }
