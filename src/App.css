@@ -1,46 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'PT Serif';
+}
+
+body {
+  width: 100%;
+  height: 100vh;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
-  height: 100vh;
   width: 100%;
-
+  height: 100vh;
 }
 
-.nav-bar {
+.left-content {
   width: 20%;
-  padding: 2em;
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  background-color: #5A639C;
+  border-right: 1px solid #5A639C;
+  padding: 10px 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   .search {
     display: flex;
-    border: 1px solid black;
     border-radius: 10px;
-    padding: 0 5px;
-    input{
+    padding: 5px 10px;
+    background-color: white;
+    margin: 2rem;
+
+    input {
       outline: none;
       border: none;
+      width: 100%;
+      color: black;
+      font-family: "Playwrite IS", cursive;
+    }
+
+    input::placeholder {
+      color: gray;
+      text-align: center;
+      font-family: "Playwrite IS", cursive;
     }
   }
 
-  li {
-    padding: 10px;
+  .nav-bar {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #5A639C;
 
-    a {
-      text-decoration: none;
-      color: black;
+
+    li {
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 2rem;
+      width: 100%;
+      position: relative;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: "Playwrite IS", cursive;
+      }
     }
+
+    li:hover {
+      background-color: #7776B3;
+
+      a {
+        color: #F19ED2;
+      }
+    }
+
+    li.active::after,
+    li:hover::after {
+      content: "";
+      width: 30%;
+      height: 2px;
+      background: #9B86BD;
+      position: absolute;
+      bottom: 8px;
+      left: 8.5em;
+      transition: 0.5s;
+      animation: nav 1.5s ease;
+    }
+
+  }
+
+  img {
+    width: 100px;
+    border-radius: 10px;
+    align-self: center;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    font-family: "Playwrite IS", cursive;
   }
 }
 
 .main-content {
   width: 80%;
+  overflow-y: scroll;
+}
+
+@keyframes nav {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 8.5em;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .left-content {
+    & .nav-bar {
+
+      li.active::after,
+      li:hover::after {
+        content: "";
+        width: 50%;
+        bottom: 8px;
+        left: 4.5em;
+        animation: nav 1.5s ease;
+      }
+    }
+  }
+
+  @keyframes nav {
+    from {
+      left: 0;
+    }
+
+    to {
+      left: 4.5em;
+    }
+  }
 }

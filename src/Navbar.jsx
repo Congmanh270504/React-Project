@@ -1,12 +1,14 @@
 
-import { CiSearch } from "react-icons/ci";
+import { FaRegUserCircle, FaUserGraduate } from "react-icons/fa";
+import { RiUserFollowLine } from "react-icons/ri";
+import { FcAbout } from "react-icons/fc";
+import { FaPerson } from "react-icons/fa6";
 function Navbar() {
     const navbar = [
-        <li key="search"><div className="search"> <input placeholder="What u wont?"></input> <CiSearch style={{ fontSize: '20px' }} /></div></li>,
-        <li key="home"><a href="#home">Home</a></li>,
-        <li key="about"><a href="#about">About</a></li>,
-        <li key="services"><a href="#services">Services</a></li>,
-        <li key="contact"><a href="#contact">Contact</a></li>
+        <li className="active" key="home"><a href="#home"><FaRegUserCircle style={{ marginRight: "1rem" }} />Introduce </a></li>,
+        <li key="about"><a href="#about"><FaPerson style={{ marginRight: "1rem", fontSize: "20px", marginLeft: "0.3em" }} /> About me</a></li>,
+        <li key="services"><a href="#services"><FaUserGraduate style={{ marginRight: "1rem", marginLeft: "1em" }} /> Experience</a></li>,
+        <li key="contact"><a href="#contact"><RiUserFollowLine style={{ marginRight: "1rem" }} />Follow me</a></li>,
     ];
     return (
         <ul className="nav-bar">
@@ -14,4 +16,5 @@ function Navbar() {
         </ul>
     );
 }
+
 export default Navbar;
