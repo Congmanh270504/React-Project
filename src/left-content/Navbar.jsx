@@ -1,7 +1,6 @@
 
 import { FaRegUserCircle, FaUserGraduate } from "react-icons/fa";
 import { RiUserFollowLine } from "react-icons/ri";
-import { FcAbout } from "react-icons/fc";
 import { FaPerson } from "react-icons/fa6";
 function Navbar() {
     const navbar = [
